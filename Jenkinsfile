@@ -18,9 +18,6 @@ pipeline {
                   cd azure-vote/
                   pwd
                   ls -otr
-                  docker images -a
-                  docker build -t jenkins-pipeline .
-                  docker images -a
                   cd ..
                
                """)
