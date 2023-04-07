@@ -12,12 +12,13 @@ pipeline {
 
       stage('Docker Build'){
          steps{
-               sh(script:'docker images -a')
+               sh(script:'/usr/local/bin/docker images -a')
                sh(script:"""
                   
                   cd azure-vote/
-                  pwd
-                  ls -otr
+                  /usr/local/bin/docker images -a
+                  /usr/local/bin/docker build -t jenkins-pipeline .
+                  /usr/local/bin/docker images -a
                   cd ..
                
                """)
