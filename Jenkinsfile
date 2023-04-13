@@ -1,6 +1,8 @@
 pipeline {
    agent any
-
+   environment {
+    PATH = "/usr/local/bin:${env.PATH}"
+   }
    stages {
       stage('Verify Branch') {
          steps {
@@ -9,6 +11,7 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
+            echo "PATH is: ${env.PATH}"
             sh(script: '/usr/local/bin/docker images -a')
             sh(script: """
                cd azure-vote/
