@@ -9,8 +9,8 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            pwsh(script: '/usr/local/bin/docker images -a')
-            pwsh(script: """
+            sh(script: '/usr/local/bin/docker images -a')
+            sh(script: """
                cd azure-vote/
                /usr/local/bin/docker images -a
                /usr/local/bin/docker build -t jenkins-pipeline .
