@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment {
-    PATH = "/usr/local/bin:${env.PATH}"
+    PATH = "/Users/olor/anaconda3/bin/:/usr/local/bin:${env.PATH}"
    }
    stages {
       stage('Verify Branch') {
